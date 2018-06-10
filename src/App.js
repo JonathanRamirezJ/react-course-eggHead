@@ -1,5 +1,11 @@
 import React, {Component} from 'react';
 
+const Widget = (props) => {
+  return(
+    <input type="text" onChange={props.update}/>
+  );
+}
+
 class App extends Component{
   constructor(){
   	super();
@@ -18,7 +24,9 @@ class App extends Component{
     let cat = this.state.cat;
     return(
       <div>
-        <input type="text" onChange={this.update.bind(this)}/>
+        <Widget update={this.update.bind(this)}/>
+        <Widget update={this.update.bind(this)}/>
+        <Widget update={this.update.bind(this)}/>
         <h1>{text} - {cat}</h1>
       </div>
     );
